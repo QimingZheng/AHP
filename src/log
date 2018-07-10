@@ -1,0 +1,43 @@
+In file included from AHP.cpp:26:0:
+asynio.h: In function ‘void read_buffersize_convergence(int, int, int&)’:
+asynio.h:52:29: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘FILE* freopen(const char*, const char*, FILE*)’
+  freopen(file_name,'r',stdin);
+                             ^
+asynio.h:53:2: error: ‘cin’ was not declared in this scope
+  cin >> edge_size;
+  ^
+asynio.h:53:2: note: suggested alternative:
+In file included from AHP.cpp:1:0:
+/usr/include/c++/4.8.2/iostream:60:18: note:   ‘std::cin’
+   extern istream cin;  /// Linked to standard input
+                  ^
+In file included from AHP.cpp:26:0:
+asynio.h: In function ‘void write_buffer(int, int, int, int, Edge*)’:
+asynio.h:58:30: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘FILE* freopen(const char*, const char*, FILE*)’
+  freopen(file_name,'w',stdout);
+                              ^
+asynio.h: In function ‘void read_buffer(int, int, int, int, Edge*)’:
+asynio.h:69:63: error: ‘sdt’ has not been declared
+  std::string file_name = "." + std::to_string(rank_1) + "-" + sdt::to_string(rank_2);
+                                                               ^
+asynio.h:70:30: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘FILE* freopen(const char*, const char*, FILE*)’
+  freopen(file_name,'r',stdout);
+                              ^
+In file included from AHP.cpp:27:0:
+algorithms.h: In member function ‘virtual void PageRank::printResult(graph_t*)’:
+algorithms.h:121:72: warning: format ‘%zd’ expects argument of type ‘signed size_t’, but argument 2 has type ‘int’ [-Wformat=]
+             printf("pr(%zd, %f)\n", graph->ivsizes[i], graph->fvwgts[i]);
+                                                                        ^
+AHP.cpp: In function ‘int main(int, char**)’:
+AHP.cpp:114:61: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     while(true && iterNum < MAX_ITERATION && iterNum < gmr->algoIterNum){
+                                                             ^
+AHP.cpp:46:12: warning: unused variable ‘starttime’ [-Wunused-variable]
+     double starttime = MPI_Wtime();
+            ^
+In file included from AHP.cpp:24:0:
+io.h: At global scope:
+io.h:67:12: warning: ‘int get_line_ints(char*, int, int*)’ defined but not used [-Wunused-function]
+ static int get_line_ints(char *buf, int bufsize, int *vals)
+            ^
+make: *** [AHP] Error 1

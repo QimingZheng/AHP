@@ -6,7 +6,7 @@
 
 #include "KVstore.h"
 #include "GMR.h"
-
+#include<string.h>
 /* 将其他节点传递过来的数据更新到本节点顶点的前驱中 */
 void updateGraph(graph_t *graph, Edge *rb, int rbsize, int rank) {
     int i = 0, j = 0, m = 0, n = 0;
@@ -179,6 +179,17 @@ void printTimeConsume(int rank) {
 }
 
 int checkfileexist(char *fname) {
+    std::ifstream fin;
+    fin.open(fname);
+    if (!fin) {
+        printf("文件不存在.\n");
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
+int checkfileexists(std::string fname) {
     std::ifstream fin;
     fin.open(fname);
     if (!fin) {
