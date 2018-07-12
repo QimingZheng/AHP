@@ -1,0 +1,11 @@
+For the convenience of File IO and
+Graph constuction.
+It's required that in the python API of AHP, all the graph file shoulde be organized in
+the following file standard:
+
+1. Number of node, a flag notify that whether ther is edege property True/Flase
+2. -> Num+1. eacj represents a node, with index in the range of 0~NUm-1;
+each line are composed of the neighboring nodes that connects to i-th node,
+space separation is enough.
+Num+2. -> 2*Num+1 The property of each nodes
+
